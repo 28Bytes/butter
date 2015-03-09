@@ -1,0 +1,16 @@
+# ERROR
+ErrorDocument 404 /
+
+# OPTIONS
+Options -Indexes +FollowSymLinks
+
+# INDEX
+DirectoryIndex index.php
+
+# REWRITES
+RewriteEngine On
+RewriteBase /
+    
+# FORCE WWW
+rewritecond %{http_host} ^yourdomain.com
+rewriteRule ^(.*) http://www.yourdomain.com/$1 [R=301,L]
